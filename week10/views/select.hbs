@@ -1,0 +1,29 @@
+<h1>{{ title1 }}</h1>
+<!-- javascript에서 전달해준 department와 lecture를 table 형식으로 출력해준다. -->
+<table>
+    <tr>
+      <td>Dname</td>
+      <td>Dnumber</td>
+    </tr>
+    {{#each department}}
+    <tr>
+      <td>{{Dname}}</td>
+      <td>{{Dnumber}}</td>
+    </tr>
+    {{/each}}
+</table>
+
+<h1>{{ title2 }}</h1>
+
+<table>
+    <tr>
+      <td>Lnum</td>
+      <td>Lname</td>
+    </tr>
+    {{#each lecture}}
+    <tr>
+      <td>{{Lnum}}</td>
+      <td>{{Lname}}</td>
+    </tr>
+    {{/each}}
+</table>

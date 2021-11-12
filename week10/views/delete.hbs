@@ -1,0 +1,57 @@
+<h1>{{ title }}</h1>
+
+<h2>{{ title1 }}</h2>
+<!-- javascript에서 전달해준 department와 lecture를 table 형식으로 출력해준다. -->
+<!-- 여기서 다른점은 각 행마다 끝에 버튼을 만들어준 점이다. 두 버튼은 다른 값을 가지고 있고 -->
+<!-- 이를 통해서 값을 구별한다. formaction은 동일한 창으로 연결해준다. -->
+<table>
+    <tr>
+        <td>Dname</td>
+        <td>Dnumber</td>
+    </tr>
+    {{#each department}}
+        <form method="post">
+            <tr>
+                <td>{{Dname}}</td>
+                <td>{{Dnumber}}</td>
+                <td style="border: none; margin-left: 10px;">
+                    <button
+                        style="margin-left: 10px;"
+                        name='delDeBtn'
+                        type="submit"
+                        value="{{Dnumber}}"
+                        formaction="/delete">
+                        삭제
+                    </button>
+                </td>
+            </tr>
+        </form>
+    {{/each}}
+</table>
+
+<h2>{{ title2 }}</h2>
+
+<table>
+    <tr>
+        <td>Lnum</td>
+        <td>Lname</td>
+    </tr>
+    {{#each lecture}}
+        <form method="post">
+            <tr>
+                <td>{{Lnum}}</td>
+                <td>{{Lname}}</td>
+                <td style="border: none; margin-left: 10px;">
+                    <button
+                        style="margin-left: 10px;"
+                        name='delLeBtn'
+                        type="submit"
+                        value="{{Lname}}"
+                        formaction="/delete">
+                        삭제
+                    </button>
+                </td>
+            </tr>
+        </form>
+    {{/each}}
+</table>

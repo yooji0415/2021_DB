@@ -1,0 +1,37 @@
+<h1>{{ title }}</h1>
+<!-- employee를 수정하는 사이트의 구조이다.
+     변경을 원하지 않는 위치들은 td 로 감싸서 값을 
+     그냥 표현해줬고, 입력을 받아서 수정하고 싶은 부분을 
+     input 으로 설정을 해주고 fromaction을 설정해 값이 
+     전달될 수 있도록 해준다. -->
+<table>
+    <tr>
+        <td>Fname</td>
+        <td>Minit</td>
+        <td>Lname</td>
+        <td>Ssn</td>
+        <td>Bdate</td>
+        <td>Address</td>
+        <td>Sex</td>
+        <td>Salary</td>
+        <td>Super_ssn</td>
+        <td>Dno</td>
+    </tr>
+    {{#each emp_res}}
+        <form method="post" action="/update/employee">
+            <tr>
+                <td>{{Fname}}</td>
+                <td>{{Minit}}</td>
+                <td>{{Lname}}</td>
+                <td>{{Ssn}}</td>
+                <td>{{Bdate}}</td>
+                <td>{{Address}}</td>
+                <td>{{Sex}}</td>
+                <td><input type="text" name="salary" placeholder={{Salary}}></td>
+                <td>{{Super_ssn}}</td>
+                <td>{{Dno}}</td>
+                <td><input type="submit" value="수정" formaction="/update/employee"></td>
+            </tr>
+        </form>
+    {{/each}}
+</table>
