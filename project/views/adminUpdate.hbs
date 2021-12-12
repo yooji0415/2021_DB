@@ -1,0 +1,120 @@
+<button type="button" class="moveHome" onClick="location.href='/'">로그인 페이지로 이동</button>
+<br><br>
+<button type="button" class="moveDelete" onClick="location.href='/adminDelete'">관리자 삭제 페이지로 이동</button>
+<button type="button" class="moveInsert" onClick="location.href='/adminInsert'">관리자 삽입 페이지로 이동</button>
+<h1>관리자 업데이트 페이지</h1>
+
+<h2>Airport 업데이트</h2>
+
+<table>
+    <tr>
+        <td>Airport_code</td>
+        <td>Name</td>
+        <td>City</td>
+        <td>State</td>
+    </tr>
+    {{#each airport}}
+        <form method="post">
+            <tr>
+                <td>{{Airport_code}}</td>
+                <td>{{Name}}</td>
+                <td>{{City}}</td>
+                <td>{{State}}</td>
+                </td>
+            </tr>
+        </form>
+    {{/each}}
+</table>
+
+<h3>Name을 바꾸고 싶은 Airport의 Airport_code와 새로운 Name을 입력해주세요.</h3>
+
+<form name="airport" method="post" action='/adminUpdate'>
+    <div>
+        <label for="airport_code">Airport_code :</label>
+        <input id="airport_code" name="airport_code" type="text" required placeholder="Airport_code">
+    </div>
+    <div>
+        <label for="name">New Name :</label>
+        <input id="name" name="name" type="text" required placeholder="Name">
+    </div>
+        <input type="submit" value="변경">
+    </div>
+</form>
+
+<h2>Airplane 업데이트</h2>
+
+<table>
+    <tr>
+        <td>Airplane_id</td>
+        <td>Airplane_type</td>
+    </tr>
+    {{#each airplane}}
+        <form method="post">
+            <tr>
+                <td>{{Airplane_id}}</td>
+                <td>{{Airplane_type}}</td>
+            </tr>
+        </form>
+    {{/each}}
+</table>
+
+<h3>Airplane_type을 바꾸고 싶은 Airplane의 Airport_id와 새로운 Airplane_type을 입력해주세요.</h3>
+
+<form name="airplane" method="post" action='/adminUpdate'>
+    <div>
+        <label for="airplane_id">Airplane_id :</label>
+        <input id="airplane_id" name="airplane_id" type="text" required placeholder="Airplane_id">
+    </div>
+    <div>
+        <label for="airplane_type">New Airplane_type :</label>
+        <input id="airplane_type" name="airplane_type" type="text" required placeholder="Airplane_type">
+    </div>
+        <input type="submit" value="변경">
+    </div>
+</form>
+
+<h2>Leg_Instance 업데이트</h2>
+
+<table>
+    <tr>
+        <td>Flight_number</td>
+        <td>Leg_number</td>
+        <td>Date</td>
+        <td>Airplane_id</td>
+        <td>Departure_time</td>
+        <td>Arrival_time</td>
+        <td>Number_of_available_seats</td>
+    </tr>
+    {{#each legin}}
+        <form method="post">
+            <tr>
+                <td>{{Flight_number}}</td>
+                <td>{{Leg_number}}</td>
+                <td>{{Date}}</td>
+                <td>{{Airplane_id}}</td>
+                <td>{{Departure_time}}</td>
+                <td>{{Arrival_time}}</td>
+                <td>{{Number_of_available_seats}}</td>
+            </tr>
+        </form>
+    {{/each}}
+</table>
+
+<h3>Number_of_available_seats를 바꾸고 싶은 Leg_Instance의 Leg_number, Date 그리고 새로운 Number_of_available_seats를 입력해주세요.</h3>
+
+<form name="leg_instance" method="post" action='/adminUpdate'>
+    <div>
+        <label for="leg_number">Leg_number :</label>
+        <input id="leg_number" name="leg_number" type="text" required placeholder="Leg_number">
+    </div>
+    <div>
+        <label for="date">Date :</label>
+        <input id="date" name="date" type="text" required placeholder="Date">
+    </div>
+    <div>
+        <label for="number_of_available_seats">Number_of_available_seats :</label>
+        <input id="number_of_available_seats" name="number_of_available_seats" type="text" required placeholder="Number_of_available_seats">
+    </div>
+        <input type="submit" value="변경">
+    </div>
+</form>

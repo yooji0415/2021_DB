@@ -1,0 +1,84 @@
+<button type="button" class="moveHome" onClick="location.href='/'">로그인 페이지로 이동</button>
+<br><br>
+<button type="button" class="moveUpdate" onClick="location.href='/adminUpdate'">관리자 업데이트 페이지로 이동</button>
+<button type="button" class="moveDelete" onClick="location.href='/adminDelete'">관리자 삭제 페이지로 이동</button>
+<h1>관리자 삽입 페이지</h1>
+
+<h2>Airport 데이터 삽입</h2>
+<form id="airport" method="post" action='/adminInsert'>
+     <div>
+        <label for="airport_code">Airport_code :</label>
+        <input id="airport_code" name="airport_code" type="text" required placeholder="Airport_code">
+    </div>
+     <div>
+        <label for="name">Name :</label>
+        <input id="name" name="name" type="text" placeholder="Name">
+    </div>
+    <div>
+        <label for="city">City :</label>
+        <input id="city" name="city" type="text" placeholder="City">
+    </div>
+    <div>
+    <div>
+        <label for="state">State :</label>
+        <input id="state" name="state" type="text" placeholder="State">
+    </div>
+    <div>
+        <input type="submit" value="삽입">
+    </div>
+</form>
+
+<br><br>
+
+<h2>Airplane 데이터 삽입</h2>
+<form id="airplane" method="post" action='/adminInsert'>
+     <div>
+        <label for="airplane_id">Airplane_id :</label>
+        <input id="airplane_id" name="airplane_id" type="text" required placeholder="Airplane_id">
+    </div>
+     <div>
+        <label for="airplane_type">Airplane_type :</label>
+        <input id="airplane_type" name="airplane_type" type="text" placeholder="Airplane_type">
+    </div>
+    <div>
+        <input type="submit" value="삽입">
+    </div>
+</form>
+
+<br><br>
+
+<h2>Leg_Instance 데이터 삽입</h2>
+
+<form name="leg_instance" method="post" action='/adminInsert'>
+    <div>
+        <label for="flight_number">Flight_number :</label>
+        <input id="flight_number" name="flight_number" type="text" required placeholder="Flight_name">
+    </div>
+    <div>
+        <label for="leg_number">Leg_number :</label>
+        <input id="leg_number" name="leg_number" type="text" required placeholder="Leg_number">
+    </div>
+    <div>
+        <label for="date">Date :</label>
+        <input id="date" name="date" type="text" placeholder="Date">
+    </div>
+    <div>
+        <label for="airplane_id_leg">Airplane_id :</label>
+        <input id="airplane_id_leg" name="airplane_id_leg" type="text" placeholder="airplane_id_leg">
+    </div>
+    <div>
+        <label for="departure_time">Departure_time :</label>
+        <input id="departure_time" name="departure_time" type="text" placeholder="departure_time">
+    </div>
+    <div>
+        <label for="arrival_time">Arrival_time :</label>
+        <input id="arrival_time" name="arrival_time" type="text" placeholder="arrival_time">
+    </div>
+    <div>
+        <label for="number_of_available_seats">Number_of_available_seats :</label>
+        <input id="number_of_available_seats" name="number_of_available_seats" type="text" placeholder="Number_of_available_seats">
+    </div>
+    <div>
+        <input type="submit" value="삽입">
+    </div>
+</form>

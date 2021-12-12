@@ -1,0 +1,101 @@
+<button type="button" class="moveHome" onClick="location.href='/'">로그인 페이지로 이동</button>
+<br><br>
+<button type="button" class="moveInsert" onClick="location.href='/adminInsert'">관리자 삽입 페이지로 이동</button>
+<button type="button" class="moveUpdate" onClick="location.href='/adminUpdate'">관리자 업데이트 페이지로 이동</button>
+
+<h1>{{ title }}</h1>
+
+<h2>{{ title1 }}</h2>
+
+<table>
+    <tr>
+        <td>Airport_code</td>
+        <td>Name</td>
+        <td>City</td>
+        <td>State</td>
+    </tr>
+    {{#each airport}}
+        <form method="post">
+            <tr>
+                <td>{{Airport_code}}</td>
+                <td>{{Name}}</td>
+                <td>{{City}}</td>
+                <td>{{State}}</td>
+                <td style="border: none; margin-left: 10px;">
+                    <button
+                        style="margin-left: 10px;"
+                        name='delAirBtn'
+                        type="submit"
+                        value="{{Airport_code}}"
+                        formaction="/adminDelete">
+                        삭제
+                    </button>
+                </td>
+            </tr>
+        </form>
+    {{/each}}
+</table>
+
+<h2>{{ title2 }}</h2>
+
+<table>
+    <tr>
+        <td>Airplane_id</td>
+        <td>Airplane_type</td>
+    </tr>
+    {{#each airplane}}
+        <form method="post">
+            <tr>
+                <td>{{Airplane_id}}</td>
+                <td>{{Airplane_type}}</td>
+                <td style="border: none; margin-left: 10px;">
+                    <button
+                        style="margin-left: 10px;"
+                        name='delPlaneBtn'
+                        type="submit"
+                        value="{{Airplane_id}}"
+                        formaction="/adminDelete">
+                        삭제
+                    </button>
+                </td>
+            </tr>
+        </form>
+    {{/each}}
+</table>
+
+<h2>{{ title3 }}</h2>
+
+<table>
+    <tr>
+        <td>Flight_number</td>
+        <td>Leg_number</td>
+        <td>Date</td>
+        <td>Airplane_id</td>
+        <td>Departure_time</td>
+        <td>Arrival_time</td>
+        <td>Number_of_available_seats</td>
+    </tr>
+    {{#each legin}}
+        <form method="post">
+            <tr>
+                <td>{{Flight_number}}</td>
+                <td>{{Leg_number}}</td>
+                <td>{{Date}}</td>
+                <td>{{Airplane_id}}</td>
+                <td>{{Departure_time}}</td>
+                <td>{{Arrival_time}}</td>
+                <td>{{Number_of_available_seats}}</td>
+                <td style="border: none; margin-left: 10px;">
+                    <button
+                        style="margin-left: 10px;"
+                        name='delLegInBtn'
+                        type="submit"
+                        value="{{Leg_number}}"
+                        formaction="/adminDelete">
+                        삭제
+                    </button>
+                </td>
+            </tr>
+        </form>
+    {{/each}}
+</table>

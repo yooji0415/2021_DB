@@ -1,0 +1,43 @@
+<button type="button" class="moveHome" onClick="location.href='/'">로그인 페이지로 이동</button>
+<br><br>
+<button type="button" class="moveDelete" onClick="location.href='/userDelete'">취소 페이지로 이동</button>
+<button type="button" class="moveInsert" onClick="location.href='/userReservation'">예약 페이지로 이동</button>
+
+<h1>{{ title }}</h1>
+
+<h2>{{ title1 }}</h2>
+
+<h3>본인의 ID를 입력해주세요.</h3>
+
+<form name="User_ID" method="post" action='/userSearch'>
+    <div>
+        <label for="User_ID">User_ID :</label>
+        <input id="User_ID" name="User_ID" type="text" required placeholder="User_ID">
+    </div>
+    </div>
+        <input type="submit" value="조회하기">
+    </div>
+</form>
+
+<br><br>
+
+<table>
+    <tr>
+        <td>User_ID</td>
+        <td>Flight_number</td>
+        <td>Leg_number</td>
+        <td>Date</td>
+        <td>Seat_number</td>
+    </tr>
+    {{#each seat_reservation}}
+        <form method="post">
+            <tr>
+                <td>{{User_ID}}</td>
+                <td>{{Flight_number}}</td>
+                <td>{{Leg_number}}</td>
+                <td>{{Date}}</td>
+                <td>{{Seat_number}}</td>
+            </tr>
+        </form>
+    {{/each}}
+</table>

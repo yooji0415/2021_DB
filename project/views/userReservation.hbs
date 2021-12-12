@@ -1,0 +1,60 @@
+<button type="button" class="moveHome" onClick="location.href='/'">로그인 페이지로 이동</button>
+<br><br>
+<button type="button" class="moveInsert" onClick="location.href='/userSearch'">조회 페이지로 이동</button>
+<button type="button" class="moveDelete" onClick="location.href='/userDelete'">취소 페이지로 이동</button>
+
+<h1>{{ title }}</h1>
+
+<h2>{{ title1 }}</h2>
+
+<table>
+    <tr>
+        <td>Flight_number</td>
+        <td>Leg_number</td>
+        <td>Date</td>
+        <td>Airplane_id</td>
+        <td>Departure_time</td>
+        <td>Arrival_time</td>
+        <td>Number_of_available_seats</td>
+    </tr>
+    {{#each legin}}
+        <form method="post">
+            <tr>
+                <td>{{Flight_number}}</td>
+                <td>{{Leg_number}}</td>
+                <td>{{Date}}</td>
+                <td>{{Airplane_id}}</td>
+                <td>{{Departure_time}}</td>
+                <td>{{Arrival_time}}</td>
+                <td>{{Number_of_available_seats}}</td>
+            </tr>
+        </form>
+    {{/each}}
+</table>
+
+<h3>예약하고 싶은 항공편의 정보와 본인의 ID를 입력해주세요.</h3>
+
+<form name="leg_instanse" method="post" action='/userReservation'>
+    <div>
+        <label for="User_ID">User_ID :</label>
+        <input id="User_ID" name="User_ID" type="text" required placeholder="User_ID">
+    </div>
+    <div>
+        <label for="Flight_number">Leg_number :</label>
+        <input id="Flight_number" name="Flight_number" type="text" required placeholder="Flight_number">
+    </div>
+    <div>
+        <label for="Leg_number">Leg_number :</label>
+        <input id="Leg_number" name="Leg_number" type="text" required placeholder="Leg_number">
+    </div>
+    <div>
+        <label for="Date">Date :</label>
+        <input id="Date" name="Date" type="text" required placeholder="Date">
+    </div>
+    <div>
+        <label for="Seat_number">Seat_number :</label>
+        <input id="Seat_number" name="Seat_number" type="text" required placeholder="Seat_number">
+    </div>
+        <input type="submit" value="예약하기">
+    </div>
+</form>
